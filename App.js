@@ -3,7 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // import Footer from './common/footer';
 // import Cards from './common/ui/card';
-import Search from './common/ui/search';
+// import Search from './common/ui/search';
+// import Detail_Pro from './common/ui/detail_pro';
 import Detail_Pro from './common/ui/detail_pro';
 
 
@@ -14,7 +15,8 @@ function App() {
     <NavigationContainer>
       <Stack.Navigator>
         {/* <Stack.Screen name="search" component={Search} /> */}
-        <Stack.Screen name="search" component={Detail_Pro} />
+        <Stack.Screen name="detail" component={Detail_Pro} />
+        {/* <Stack.Screen name="detail1" component={Detail_Pro1} /> */}
         {/* <Stack.Screen name="User" component={User} /> */}
         {/* <Stack.Screen name="Card" component={Cards} /> */}
         {/* <Stack.Screen name="Inbox" component={Inbox} /> */}
