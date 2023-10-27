@@ -16,6 +16,7 @@ function App() {
       <Stack.Navigator>
         {/* <Stack.Screen name="search" component={Search} /> */}
         <Stack.Screen name="detail" component={Detail_Pro} />
+        {/* <Stack.Screen name="chat" component={Chat} /> */}
         {/* <Stack.Screen name="detail1" component={Detail_Pro1} /> */}
         {/* <Stack.Screen name="User" component={User} /> */}
         {/* <Stack.Screen name="Card" component={Cards} /> */}

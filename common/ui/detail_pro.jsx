@@ -1,15 +1,12 @@
 import { StyleSheet, View, ImageBackground, Image, Text, ScrollView } from 'react-native';
 import { Card } from 'react-native-shadow-cards';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import { useNavigation } from '@react-navigation/native';
-
 
 export default function Detail_Pro() {
-  const navigation = useNavigation();
   return (
 
     <ImageBackground style={styles.image}
-      source={require('../../assets/cake.png')}>
+      source={require('../../assets/Photo_Restaurant.png')}>
       <ScrollView >
         <View style={styles.detail_text}>
           <View style={styles.top_text}>
@@ -23,7 +20,7 @@ export default function Detail_Pro() {
               <Ionicons name='heart' color={"#ff4b4b"} size={30} style={styles.heart}></Ionicons>
             </View>
           </View>
-          <Text style={styles.name_pro}>Rainbow Sandwich {'\n'} Sugarless</Text>
+          <Text style={styles.name_pro}>Wijie Bar and Resto</Text>
           <View style={styles.content}>
             <Text style={styles.locationout}>
               <Ionicons name='location-outline' color={"#6B50F6"} size={22}></Ionicons>
@@ -123,7 +120,10 @@ export default function Detail_Pro() {
                       marginLeft:25,
                       marginTop: 20
                     }}>Testimonials</Text>
-         <ScrollView>
+         <ScrollView 
+         vertical 
+              showsHorizontalScrollIndicator={false}
+              contentContainerStyle={styles.scrollViewContent}>
          <View>
             <Card style={styles.card_pro}>
               <Image style={styles.img_pro} source={require('../../assets/person.jpg')} />
@@ -221,12 +221,11 @@ const styles = StyleSheet.create({
   top_text: {
     flexDirection: 'row',
     margin: 25,
-    marginTop:50,
 
   },
   detail_text: {
     // zIndex: 9999,
-    marginTop: 290,
+    marginTop: 280,
     height: 700,
     backgroundColor: '#f8f8f8',
     borderTopLeftRadius: 40,
