@@ -134,7 +134,7 @@ export default function App() {
                       padding: 4,
                     }}
                   >
-                     <Icon name="shopping-cart" size={30}
+                    <Icon name="shopping-cart" size={30}
                       color={focused ? "#2A01FF" : "#856DFF"}
                     />
                     {/* <Text
@@ -170,7 +170,7 @@ export default function App() {
                       padding: 4,
                     }}
                   >
-                     <Ionicons name="chatbubble-ellipses" size={30}
+                    <Ionicons name="chatbubble-ellipses" size={30}
                       color={focused ? "#2A01FF" : "#856DFF"}
                     />
                     {/* <Text
