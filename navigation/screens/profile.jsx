@@ -1,5 +1,5 @@
 import { StyleSheet, View, ImageBackground, Image, Text, ScrollView } from 'react-native';
-import { Card } from 'react-native-shadow-cards';
+import profileData from './profiledata';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 export const Profile = ({ navigation }) => {
   return (
@@ -29,70 +29,21 @@ export const Profile = ({ navigation }) => {
             marginTop: 20
           }}>Favorite</Text>
           <ScrollView>
-            <View style={styles.cart_mess}>
-              <View style={{ flexDirection: 'row', backgroundColor: '#fff', width: 380, justifyContent: 'space-between', alignItems: 'center', padding: 10, borderRadius: 20, }}>
-                <View>
-                  <Image
-                    style={styles.img}
-                    source={require(`../../assets/images/susi.jpg`)}
-                  ></Image>
+            {profileData.map(item => (
+              <View key={item.id} style={styles.cart_mess}>
+                <View style={{ flexDirection: 'row', backgroundColor: '#fff', width: 380, justifyContent: 'space-between', alignItems: 'center', padding: 10, borderRadius: 20, }}>
+                  <View>
+                    <Image style={styles.img} source={item.image} />
+                  </View>
+                  <View style={{ marginRight: 40 }}>
+                    <Text style={{ fontWeight: 'bold', fontSize: 18 }}>{item.name}</Text>
+                    <Text style={{ color: '#bdbdc0', marginTop: 5 }}>{item.restaurant}</Text>
+                    <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#6b50f6' }}>${item.price}</Text>
+                  </View>
+                  <Text style={{ color: '#fff', marginTop: -10, padding: 10, backgroundColor: '#6b50f6', borderRadius: 20, marginRight: 25 }}>Buy Again</Text>
                 </View>
-                <View style={{ marginRight: 40 }}>
-                  <Text style={{ fontWeight: 'bold',fontSize:18}}>Gimbap</Text>
-                  <Text style={{ color: '#bdbdc0', marginTop: 5 }}>Waroenk kita</Text>
-                  <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#6b50f6' }}>$ 35</Text>
-                </View>
-                <Text style={{ color: '#fff', marginTop: -10, padding: 10, backgroundColor: '#6b50f6', borderRadius: 20, marginRight:25 }}>Buy Again</Text>
               </View>
-            </View>
-            <View style={styles.cart_mess}>
-              <View style={{ flexDirection: 'row', backgroundColor: '#fff', width: 380, justifyContent: 'space-between', alignItems: 'center', padding: 10, borderRadius: 20, }}>
-                <View>
-                  <Image
-                    style={styles.img}
-                    source={require(`../../assets/images/trasua.jpg`)}
-                  ></Image>
-                </View>
-                <View style={{ marginRight: 40 }}>
-                  <Text style={{ fontWeight: 'bold',fontSize:18 }}>Milk Tea</Text>
-                  <Text style={{ color: '#bdbdc0', marginTop: 5, }}>Waroenk kita</Text>
-                  <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#6b50f6' }}>$ 12</Text>
-                </View>
-                <Text style={{ color: '#fff', marginTop: -10, padding: 10, backgroundColor: '#6b50f6', borderRadius: 20, marginRight:25 }}>Buy Again</Text>
-              </View>
-            </View>
-            <View style={styles.cart_mess}>
-              <View style={{ flexDirection: 'row', backgroundColor: '#fff', width: 380, justifyContent: 'space-between', alignItems: 'center', padding: 10, borderRadius: 20, }}>
-                <View>
-                  <Image
-                    style={styles.img}
-                    source={require(`../../assets/images/humbeger.jpg`)}
-                  ></Image>
-                </View>
-                <View style={{ marginRight: 40 }}>
-                  <Text style={{ fontWeight: 'bold', fontSize:18 }}>Hamburger</Text>
-                  <Text style={{ color: '#bdbdc0', marginTop: 5,}}>Waroenk kita</Text>
-                  <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#6b50f6' }}>$ 44</Text>
-                </View>
-                <Text style={{ color: '#fff', marginTop: -10, padding: 10, backgroundColor: '#6b50f6', borderRadius: 20, marginRight:25 }}>Buy Again</Text>
-              </View>
-            </View>
-            <View style={styles.cart_mess}>
-              <View style={{ flexDirection: 'row', backgroundColor: '#fff', width: 380, justifyContent: 'space-between', alignItems: 'center', padding: 10, borderRadius: 20, }}>
-                <View>
-                  <Image
-                    style={styles.img}
-                    source={require(`../../assets/images/banhxeo.jpg`)}
-                  ></Image>
-                </View>
-                <View style={{ marginRight: 40 }}>
-                  <Text style={{ fontWeight: 'bold', fontSize:18 }}>Banh Xeo</Text>
-                  <Text style={{ color: '#bdbdc0', marginTop: 5}}>Waroenk kita</Text>
-                  <Text style={{ fontSize: 20, fontWeight: 'bold', color: '#6b50f6' }}>$ 7</Text>
-                </View>
-                <Text style={{ color: '#fff', marginTop: -10, padding: 10, backgroundColor: '#6b50f6', borderRadius: 20, marginRight:25 }}>Buy Again</Text>
-              </View>
-            </View>
+            ))}
           </ScrollView>
         </View>
       </ScrollView>
@@ -110,10 +61,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     margin: 25,
   },
-  name_pro:{
-    marginLeft:25,
-    fontSize:23,
-    fontWeight:'bold'
+  name_pro: {
+    marginLeft: 25,
+    fontSize: 23,
+    fontWeight: 'bold'
   },
   detail_text: {
     // zIndex: 9999,
@@ -142,8 +93,8 @@ const styles = StyleSheet.create({
     padding: 10,
     width: 380,
     borderRadius: 10,
-    backgroundColor:'#fff',
-    borderRadius:15,
+    backgroundColor: '#fff',
+    borderRadius: 15,
   },
   image_voucher: {
     width: 50,

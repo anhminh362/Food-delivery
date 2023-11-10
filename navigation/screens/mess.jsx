@@ -1,7 +1,6 @@
 // import React from 'react'
 import {
   Pressable,
-  ImageBackground,
   Text,
   View,
   StyleSheet,
@@ -9,18 +8,10 @@ import {
   TextInput,
   Button,
   ScrollView,
-  FlatList,
 } from "react-native";
 import React, { useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Boundary } from "../../common/ui/boundary";
-const listCard = [
-  {
-    name: "Vegan Resto",
-    img: "Restaurant1",
-    time: "12mins",
-  },
-];
 
 export const Mess = ({ navigation }) => {
   const [message, setMessage] = useState("");
@@ -30,16 +21,16 @@ export const Mess = ({ navigation }) => {
     setMessage("");
   };
   return (
-    <Boundary title={'Chat'}>
-   
+    <Boundary title={"Chat"}>
       <View style={styles.cart_mess}>
-        <View
-          style={styles.box}
-        >
-          <Image
-            style={styles.img}
-            source={require(`../../assets/images/image_per5.jpg`)}
-          ></Image>
+        <View style={styles.box}>
+          <Pressable onPress={() => navigation.navigate("Profile")}>
+            <Image
+              style={styles.img}
+              source={require(`../../assets/images/image_per5.jpg`)}
+            ></Image>
+          </Pressable>
+
           <View style={{ flexDirection: "row", marginRight: 35 }}>
             <View>
               <Text style={{ fontWeight: "bold", fontSize: 16 }}>
@@ -61,63 +52,29 @@ export const Mess = ({ navigation }) => {
                 marginLeft: 100,
               }}
             >
-              <Ionicons name="call" color={"#6b50f6"} size={25}></Ionicons>
+              <Pressable onPress={() => navigation.navigate("Call")}>
+                <Ionicons name="call" color={"#6b50f6"} size={25}></Ionicons>
+              </Pressable>
             </View>
           </View>
         </View>
       </View>
       <ScrollView style={{ height: 500 }}>
         <View style={styles.chat}>
-          <Text
-            style={styles.whiteText}
-          >
-            Just to order
-          </Text>
-          <Text
-            style={styles.blueText}
-          >
+          <Text style={styles.whiteText}>Just to order</Text>
+          <Text style={styles.blueText}>
             Okay, for what level of spiciness?
           </Text>
-          <Text
-            style={styles.whiteText}
-          >
-            Okay, wait a minute 👍
-          </Text>
-          <Text
-            style={styles.blueText}
-          >
-            Okay I'm waiting 👍
-          </Text>
-          <Text
-            style={styles.whiteText}
-          >
-            Just to order
-          </Text>
-          <Text
-            style={styles.whiteText}
-          >
-            Just to order
-          </Text>
-          <Text
-            style={styles.blueText}
-          >
+          <Text style={styles.whiteText}>Okay, wait a minute 👍</Text>
+          <Text style={styles.blueText}>Okay I'm waiting 👍</Text>
+          <Text style={styles.whiteText}>Just to order</Text>
+          <Text style={styles.whiteText}>Just to order</Text>
+          <Text style={styles.blueText}>
             Okay, for what level of spiciness?
           </Text>
-          <Text
-            style={styles.whiteText}
-          >
-            Okay, wait a minute 👍
-          </Text>
-          <Text
-            style={styles.blueText}
-          >
-            Okay I'm waiting 👍
-          </Text>
-          <Text
-            style={styles.whiteText}
-          >
-            Just to order
-          </Text>
+          <Text style={styles.whiteText}>Okay, wait a minute 👍</Text>
+          <Text style={styles.blueText}>Okay I'm waiting 👍</Text>
+          <Text style={styles.whiteText}>Just to order</Text>
         </View>
       </ScrollView>
       <View style={styles.messageInputContainer}>
@@ -142,7 +99,7 @@ const styles = StyleSheet.create({
   cart_mess: {
     justifyContent: "center",
     alignItems: "center",
-    marginVertical:20
+    marginVertical: 20,
   },
   messageInputContainer: {
     flexDirection: "row",
@@ -151,6 +108,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     marginTop: 10,
     backgroundColor: "white", // Tùy chỉnh màu nền cho phần nhập tin nhắn
+    // position: "absolute",
+    // top: 0,
+    // // bottom:0,
+    // flexDirection: "row",
+    // alignItems: "center",
+    // justifyContent: "space-between",
+    // paddingHorizontal: 16,
+    // marginTop: 690,
+    // height: 70,
+    // width: 420,
+    // backgroundColor: "white", // Tùy chỉnh màu nền cho phần nhập tin nhắn
   },
   messageInput: {
     flex: 1,
@@ -159,6 +127,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     marginRight: 8,
     paddingHorizontal: 8,
+    height: 40,
   },
   box: {
     flexDirection: "row",
@@ -168,25 +137,25 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     gap: 10,
   },
-  chat:{
-    flexDirection:'column',
-    gap:10
+  chat: {
+    flexDirection: "column",
+    gap: 10,
   },
-  whiteText:{
+  whiteText: {
     fontSize: 17,
     backgroundColor: "#fafafa",
-    alignSelf:'flex-start',
-    maxWidth:'80%',
+    alignSelf: "flex-start",
+    maxWidth: "80%",
     padding: 17,
     borderRadius: 20,
   },
-  blueText:{
+  blueText: {
     fontSize: 17,
     color: "#fff",
     backgroundColor: "#6b50f6",
     padding: 17,
     borderRadius: 20,
-    maxWidth:'80%',
-    alignSelf:'flex-end'
-  }
+    maxWidth: "80%",
+    alignSelf: "flex-end",
+  },
 });

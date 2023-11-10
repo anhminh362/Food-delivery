@@ -5,6 +5,7 @@ import { Profile } from "./navigation/screens/profile";
 import { Message } from "./navigation/screens/message";
 import { Mess } from "./navigation/screens/mess";
 import Market from "./navigation/screens/market";
+import { Call } from "./navigation/screens/call";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -159,6 +160,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
          <Stack.Screen name="Mess" component={Mess} options={{headerShown: false}}/>
+         <Stack.Screen name="Call" component={Call} />
         <Stack.Screen name="Search" component={Search} />
       </Stack.Navigator>
     </NavigationContainer>
