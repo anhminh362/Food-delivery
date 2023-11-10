@@ -11,8 +11,10 @@ import {
   ScrollView,
   FlatList
 } from "react-native";
-export const Profile = ({ navigation }) => {
+import Detail_Pro1 from '../../common/ui/detail_pro1';
+export const Profile = () => {
   return (
-    <Text>Profile</Text>
+    <Detail_Pro1/>
   )
 }
+

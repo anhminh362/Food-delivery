@@ -3,7 +3,8 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Home from "./navigation/screens/home";
 import { Profile } from "./navigation/screens/profile";
 import { Message } from "./navigation/screens/message";
-import { Market } from "./navigation/screens/market";
+// import { Market } from "./navigation/screens/market";
+import Market from "./navigation/screens/market";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
@@ -13,6 +14,7 @@ import ColorScreen from "./navigation/screens/ColorScreen";
 import { Foundation, MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome";
+import Search from "./common/ui/search";
 // import * as Animatable from 'react-native-animatable';
 
 const Stack = createStackNavigator();
@@ -199,12 +201,12 @@ export default function App() {
           component={BottomTabs}
           options={{ headerShown: false }}
         />
-        {/* <Stack.Screen name="Profile" component={Profile} />
-         <Stack.Screen name="Market" component={Market} />
+        <Stack.Screen name="Search" component={Search} />
+         {/* <Stack.Screen name="Market" component={Market} />
          <Stack.Screen name="Message" component={Message} /> */}
       </Stack.Navigator>
     </NavigationContainer>
-    // <Home/>
+    // <Search/>
   );
 }
 

@@ -11,8 +11,9 @@ import {
   ScrollView,
   FlatList
 } from "react-native";
+import { Boundary } from '../../common/ui/boundary';
 export const Message = ({ navigation }) => {
   return (
-    <Text>Message</Text>
+    <Boundary/>
   )
 }
