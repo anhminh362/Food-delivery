@@ -1,19 +1,22 @@
-import React from 'react'
+import { StatusBar } from "expo-status-bar";
 import {
-  Pressable,
   ImageBackground,
+  StyleSheet,
   Text,
   View,
-  StyleSheet,
-  Image,
-  TextInput,
-  Button,
   ScrollView,
-  FlatList
 } from "react-native";
-export const Market = () => {
+import CardProduct from "../../common/ui/cardPro";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { Boundary } from "../../common/ui/boundary";
+import TotalView from "../../common/ui/totalView";
+export default OrderDetail = ({ navigation }) => {
+
   return (
-    <Text>market</Text>
-  )
-}
+    <Boundary title={"OrderDetail"}>
+        <CardProduct />
+      <TotalView/>
+    </Boundary>
+  );
+};
 

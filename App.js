@@ -3,28 +3,22 @@ import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 import Home from "./navigation/screens/home";
 import { Profile } from "./navigation/screens/profile";
 import { Message } from "./navigation/screens/message";
-import { Market } from "./navigation/screens/market";
 import { Mess } from "./navigation/screens/mess";
+import Market from "./navigation/screens/market";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-// import Icon, { Icons } from './components/Icons';
 import Colors from "./constants/Colors";
 import ColorScreen from "./navigation/screens/ColorScreen";
 import { Foundation, MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome";
-// import * as Animatable from 'react-native-animatable';
+import Search from "./common/ui/search";
 
 const Stack = createStackNavigator();
 export default function App() {
   const Tab = createBottomTabNavigator();
-  // const TabArr= [
-  //   { route: 'Home', label: 'Home', type: Icons.Feather, icon: 'home', component: ColorScreen, color: Colors.primary, alphaClr: Colors.primaryAlpha },
-  // { route: 'Search', label: 'Search', type: Icons.Feather, icon: 'search', component: ColorScreen, color: Colors.green, alphaClr: Colors.greenAlpha },
-  // { route: 'Add', label: 'Add New', type: Icons.Feather, icon: 'plus-square', component: ColorScreen, color: Colors.red, alphaClr: Colors.redAlpha },
-  // { route: 'Account', label: 'Account', type: Icons.FontAwesome, icon: 'user-circle-o', component: ColorScreen, color: Colors.purple, alphaClr: Colors.purpleAlpha },
-  // ]
+ 
   const screenOptions = {
     tabBarShowLabel: true,
     headerShown: true,
@@ -68,15 +62,6 @@ export default function App() {
                       color={focused ? "#2A01FF" : "#856DFF"}
                       size={30}
                     />
-                    {/* <Text
-                      style={
-                        focused
-                          ? styles.tabBarTextFocused
-                          : styles.tabBarTextUnfocused
-                      }
-                    >
-                      Home
-                    </Text> */}
                   </View>
                 </View>
               );
@@ -102,15 +87,6 @@ export default function App() {
                     }}
                   >
                     <Ionicons name="person" color={focused ? "#2A01FF" : "#856DFF"} size={30} />
-                    {/* <Text
-                      style={
-                        focused
-                          ? styles.tabBarTextFocused
-                          : styles.tabBarTextUnfocused
-                      }
-                    >
-                      Home
-                    </Text> */}
                   </View>
                 </View>
               );
@@ -138,15 +114,6 @@ export default function App() {
                     <Icon name="shopping-cart" size={30}
                       color={focused ? "#2A01FF" : "#856DFF"}
                     />
-                    {/* <Text
-                      style={
-                        focused
-                          ? styles.tabBarTextFocused
-                          : styles.tabBarTextUnfocused
-                      }
-                    >
-                      Home
-                    </Text> */}
                   </View>
                 </View>
               );
@@ -174,15 +141,6 @@ export default function App() {
                     <Ionicons name="chatbubble-ellipses" size={30}
                       color={focused ? "#2A01FF" : "#856DFF"}
                     />
-                    {/* <Text
-                      style={
-                        focused
-                          ? styles.tabBarTextFocused
-                          : styles.tabBarTextUnfocused
-                      }
-                    >
-                      Home
-                    </Text> */}
                   </View>
                 </View>
               );
@@ -200,13 +158,10 @@ export default function App() {
           component={BottomTabs}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Profile" component={Profile} />
-         <Stack.Screen name="Market" component={Market} />
-         <Stack.Screen name="Message" component={Message} />
-         <Stack.Screen name="Mess" component={Mess} />
+         <Stack.Screen name="Mess" component={Mess} options={{headerShown: false}}/>
+        <Stack.Screen name="Search" component={Search} />
       </Stack.Navigator>
     </NavigationContainer>
-    // <Home/>
   );
 }
 
