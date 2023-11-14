@@ -30,7 +30,9 @@ export default Home = () => {
           <View style={styles.Nearest}>
             <View style={styles.session}>
               <Text style={styles.text}>Nearest Restaurant</Text>
-              <Pressable>
+              <Pressable
+            onPress={() => navigation.navigate("MoreRestaurant")}
+          >
                 <Text style={styles.viewMore}>View more</Text>
               </Pressable>
             </View>
