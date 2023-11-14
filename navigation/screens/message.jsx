@@ -17,7 +17,10 @@ export const Message = ({ navigation }) => {
       <ScrollView>
         <View style={styles.list}>
           {messageData.map((message) => (
-            <Pressable onPress={() => navigation.navigate("Mess")}>
+            <Pressable
+              onPress={() => navigation.navigate("Mess")}
+              key={message.id}
+            >
               <View style={styles.cart_mess}>
                 <View style={styles.box}>
                   <View>

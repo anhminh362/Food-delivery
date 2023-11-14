@@ -11,12 +11,10 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { Boundary } from "../../common/ui/boundary";
 import TotalView from "../../common/ui/totalView";
 export default OrderDetail = ({ navigation }) => {
-
   return (
     <Boundary title={"OrderDetail"}>
-        <CardProduct />
-      <TotalView/>
+      <CardProduct />
+      <TotalView />
     </Boundary>
   );
 };
-

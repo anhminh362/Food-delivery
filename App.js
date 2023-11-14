@@ -1,5 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
+import { StyleSheet, View } from "react-native";
 import Home from "./navigation/screens/home";
 import { Profile } from "./navigation/screens/profile";
 import { Message } from "./navigation/screens/message";
@@ -9,17 +8,15 @@ import { Call } from "./navigation/screens/call";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import Colors from "./constants/Colors";
-import ColorScreen from "./navigation/screens/ColorScreen";
-import { Foundation, MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Search from "./common/ui/search";
+import Rating from "./navigation/screens/rating";
 
 const Stack = createStackNavigator();
 export default function App() {
   const Tab = createBottomTabNavigator();
- 
+
   const screenOptions = {
     tabBarShowLabel: true,
     headerShown: true,
@@ -87,7 +84,11 @@ export default function App() {
                       padding: 4,
                     }}
                   >
-                    <Ionicons name="person" color={focused ? "#2A01FF" : "#856DFF"} size={30} />
+                    <Ionicons
+                      name="person"
+                      color={focused ? "#2A01FF" : "#856DFF"}
+                      size={30}
+                    />
                   </View>
                 </View>
               );
@@ -112,7 +113,9 @@ export default function App() {
                       padding: 4,
                     }}
                   >
-                    <Icon name="shopping-cart" size={30}
+                    <Icon
+                      name="shopping-cart"
+                      size={30}
                       color={focused ? "#2A01FF" : "#856DFF"}
                     />
                   </View>
@@ -139,7 +142,9 @@ export default function App() {
                       padding: 4,
                     }}
                   >
-                    <Ionicons name="chatbubble-ellipses" size={30}
+                    <Ionicons
+                      name="chatbubble-ellipses"
+                      size={30}
                       color={focused ? "#2A01FF" : "#856DFF"}
                     />
                   </View>
@@ -159,9 +164,22 @@ export default function App() {
           component={BottomTabs}
           options={{ headerShown: false }}
         />
-         <Stack.Screen name="Mess" component={Mess} options={{headerShown: false}}/>
-         <Stack.Screen name="Call" component={Call} />
-        <Stack.Screen name="Search" component={Search} />
+        <Stack.Screen
+          name="Mess"
+          component={Mess}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Call" component={Call} />
+        <Stack.Screen
+          name="Rating"
+          component={Rating}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Search"
+          component={Search}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );

@@ -5,11 +5,14 @@ import {
   ImageBackground,
   ScrollView,
   Text,
+  Pressable,
 } from "react-native";
 import Background from "../../assets/images/Pattern.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
+import { useNavigation } from '@react-navigation/native';
 
 export const Boundary = ({ children, title }) => {
+  const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <ImageBackground
@@ -17,12 +20,14 @@ export const Boundary = ({ children, title }) => {
         style={styles.background}
         resizeMode="cover"
       >
+        <Pressable onPress={() => navigation.goBack()}>
         <Ionicons
           name="arrow-back"
           color={"#6B50F6"}
           size={25}
           style={styles.backIcon}
         />
+        </Pressable>
         <Text style={styles.title}>{title}</Text>
         {children}
       </ImageBackground>

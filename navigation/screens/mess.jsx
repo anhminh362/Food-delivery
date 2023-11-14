@@ -1,4 +1,3 @@
-// import React from 'react'
 import {
   Pressable,
   Text,
@@ -24,7 +23,7 @@ export const Mess = ({ navigation }) => {
     <Boundary title={"Chat"}>
       <View style={styles.cart_mess}>
         <View style={styles.box}>
-          <Pressable onPress={() => navigation.navigate("Profile")}>
+          <Pressable onPress={() => navigation.navigate("Rating")}>
             <Image
               style={styles.img}
               source={require(`../../assets/images/image_per5.jpg`)}

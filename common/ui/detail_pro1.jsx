@@ -322,9 +322,6 @@ export default function Detail_Pro1() {
 const styles = StyleSheet.create({
   image: {
     flex: 1,
-    // resizeMode: "cover",
-    // justifyContent: "center",
-    // width: 430,
     height: 400,
   },
   top_text: {
@@ -332,7 +329,6 @@ const styles = StyleSheet.create({
     margin: 25,
   },
   detail_text: {
-    // zIndex: 9999,
     marginTop: 280,
     height: 700,
     backgroundColor: "#f8f8f8",
