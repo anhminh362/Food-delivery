@@ -2,7 +2,6 @@ import React from "react";
 import Background from "../../assets/images/Pattern.png";
 import { useNavigation } from "@react-navigation/native";
 import Banner from "../../common/ui/banner";
-import Tab from "../../common/tab";
 import {
   Pressable,
   ImageBackground,
@@ -19,8 +18,6 @@ export default Home = () => {
   const [viewMoreText, setViewMoreText] = React.useState("View more");
   const [ShowAllItems, setshowAllItems] = React.useState(false);
   const [ViewMoreText, setviewMoreText] = React.useState("View more");
-
-// const listCard = [{ name: "Vegan Resto", img: "Restaurant", time: "12mins" }];
 
   const navigation = useNavigation();
   return (
@@ -71,7 +68,6 @@ export default Home = () => {
             </View>
             {/* <CardList list={listCard}/> */}
           </View>
-          {/* <Text>ABC</Text> */}
           <View style={styles.Nearest}>
             <View style={styles.session}>
               <Text style={styles.text}>Popular Menu</Text>

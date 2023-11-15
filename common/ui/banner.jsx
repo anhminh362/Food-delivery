@@ -1,38 +1,9 @@
-import React from "react";
-// import { View, StyleSheet } from "react-native";
-// interface IProp extends React.ButtonHTMLAttributes<{}> {
-//   text: string;
-//   button?: React.ReactElement;
-//   background?: React.ReactElement;
-//   className?: string;
-//   color?: string;
-//   isLoading?: boolean;
-// }
-// export default function Button(props: IProp) {
-//   const { isLoading, color, className, children, background, disabled, button, ...rest } = props;
-//   return (
-//     <View style={styles}>
-
-//     </View>
-//   );
-// }
-
-// const styles= StyleSheet.create({
-//   container:{
-
-//   }
-// })
-// import { StatusBar } from 'expo-status-bar';
-import { StatusBar } from "expo-status-bar";
 import {
   ImageBackground,
   StyleSheet,
   Text,
-  TextInput,
   View,
   Pressable,
-  Image,
-  Button,
 } from "react-native";
 
 export default function Banner({ image }) {

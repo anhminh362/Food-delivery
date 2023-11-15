@@ -18,7 +18,11 @@ export default Header = () => {
     <View style={styles.top}>
       <View style={styles.main}>
         <Text style={styles.start}>Find Your {"\n"}Favourite Food</Text>
-        <Pressable >
+        <Pressable
+          onPress={() => {
+            navigation.navigate("Noti");
+          }}
+        >
           <Ionicons
             style={styles.notificationIcon}
             name="notifications-outline"

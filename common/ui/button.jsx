@@ -1,6 +1,5 @@
 import {
   Pressable,
-  ImageBackground,
   Text,
   View,
   StyleSheet,

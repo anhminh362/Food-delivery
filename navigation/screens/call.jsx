@@ -1,12 +1,10 @@
 import React from "react";
 import {
-  Pressable,
   ImageBackground,
   Text,
   View,
   StyleSheet,
   Image,
-  ScrollView,
 } from "react-native";
 import Background from "../../assets/images/background.png";
 import Ionicons from "react-native-vector-icons/Ionicons";

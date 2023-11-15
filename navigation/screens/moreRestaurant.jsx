@@ -2,7 +2,6 @@ import React from "react";
 import Background from "../../assets/images/Pattern.png";
 // import Banner from "../assets/images/banner1.png";
 import Banner from "../../common/ui/banner";
-import Tab from "../../common/tab";
 import {
   Pressable,
   ImageBackground,

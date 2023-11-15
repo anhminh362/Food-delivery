@@ -2,7 +2,6 @@ import React, { useState, useRef } from "react";
 import {
   StyleSheet,
   View,
-  ImageBackground,
   Text,
   Pressable,
 } from "react-native";
@@ -42,24 +41,13 @@ export default function Tab({navigation}) {
 
 const styles = StyleSheet.create({
   background: {
-    // flex: 1,
-    // resizeMode: "cover",
-    // justifyContent: "center",
+   
   },
-  // card: {
-  //   marginTop: 40,
-  //   marginLeft: "auto",
-  //   marginRight: "auto",
-  // },
   icons: {
     flexDirection: "row",
     justifyContent: "space-between",
-    // marginLeft: "auto",
-    // marginRight: "auto",
-    // width: 360,
     height: 70,
     backgroundColor: "#fefeff",
-    // borderRadius: 20,
     padding: 20,
   },
   find: {

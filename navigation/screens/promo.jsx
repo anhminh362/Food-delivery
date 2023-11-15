@@ -31,16 +31,13 @@ const styles = StyleSheet.create({
   list:{
     flexDirection:'column',
     gap:10,
-    // alignSelf:'flex-start'
   },
   container:{
     flexDirection:'column',
-    // flexWrap:'wrap',
     justifyContent:'space-between'
   },
   buttonView: {
     marginTop: 300,
-    // alignSelf:'flex-start'
   },
   button: {
     backgroundColor: "#6B50F6",

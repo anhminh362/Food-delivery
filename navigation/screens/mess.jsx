@@ -100,8 +100,8 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
   icon:{
-    width: 40,
-    height: 40,
+    width: 30,
+    height: 30,
   },
   cart_mess: {
     justifyContent: "center",
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     paddingVertical: 2,
     paddingHorizontal:9,
     backgroundColor:'#fff',
-    borderRadius: 20,
+    borderRadius: 15,
     marginTop:15,
     marginHorizontal:15
   },

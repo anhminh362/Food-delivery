@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { View } from "react-native";
 import Home from "./navigation/screens/home";
 import { Profile } from "./navigation/screens/profile";
 import { Message } from "./navigation/screens/message";
@@ -14,7 +14,7 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import Search from "./common/ui/search";
 import Rating from "./navigation/screens/rating";
 import promo from "./navigation/screens/promo";
-
+import Notifications from './navigation/screens/noti'
 const Stack = createStackNavigator();
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -185,6 +185,11 @@ export default function App() {
         <Stack.Screen
           name="Promo"
           component={promo}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Noti"
+          component={Notifications}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

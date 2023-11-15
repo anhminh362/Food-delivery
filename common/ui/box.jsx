@@ -1,6 +1,4 @@
-import { StyleSheet, View, ImageBackground, Image, Text, Pressable} from 'react-native';
-import { Card } from 'react-native-shadow-cards';
-import Detail_Pro1 from './detail_pro1';
+import { StyleSheet, View, ImageBackground, Image, Text} from 'react-native';
 import React from 'react';
 
 export default CardProduct = ({ navigation }) => {

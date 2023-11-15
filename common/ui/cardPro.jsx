@@ -101,7 +101,6 @@ import React, { useState } from "react";
 import {
   StyleSheet,
   View,
-  ImageBackground,
   Image,
   Text,
   FlatList,
@@ -110,7 +109,6 @@ import {
 import { Card } from "react-native-shadow-cards";
 import { Ionicons } from "@expo/vector-icons";
 import productsData from "../../data/data";
-// import TotalView from './totalView';
 
 function CardProduct() {
   const [data, setData] = useState(productsData);
