@@ -11,7 +11,7 @@ import {
 import React, { useState } from "react";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import { Boundary } from "../../common/ui/boundary";
-
+import SendIcon from '../../assets/images/IconSend.png'
 export const Mess = ({ navigation }) => {
   const [message, setMessage] = useState("");
 
@@ -59,7 +59,7 @@ export const Mess = ({ navigation }) => {
           </View>
         </View>
       </View>
-      <ScrollView style={{ height: 470 }}>
+      <ScrollView style={{ height: 450 }}>
         <View style={styles.chat}>
           <Text style={styles.whiteText}>Just to order</Text>
           <Text style={styles.blueText}>
@@ -84,7 +84,9 @@ export const Mess = ({ navigation }) => {
           value={message}
           onChangeText={(text) => setMessage(text)}
         />
-        <Button title="Send" onPress={sendMessage} />
+        <Pressable onPress={sendMessage} >
+          <Image source={SendIcon} style={styles.icon}/>
+        </Pressable>
       </View>
       </View>
     </Boundary>
@@ -97,6 +99,10 @@ const styles = StyleSheet.create({
     height: 90,
     borderRadius: 20,
   },
+  icon:{
+    width: 40,
+    height: 40,
+  },
   cart_mess: {
     justifyContent: "center",
     alignItems: "center",
@@ -106,23 +112,23 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     flexWrap:'wrap',
     justifyContent:'space-around',
-    // backgroundColor:'yellow'
   },
   messageInputContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 16,
-    
+    paddingVertical: 2,
+    paddingHorizontal:9,
+    backgroundColor:'#fff',
+    borderRadius: 20,
+    marginTop:5,
+    marginHorizontal:15
   },
   messageInput: {
     flex: 1,
-    borderWidth: 1,
-    borderColor: "gray",
-    borderRadius: 20,
     marginRight: 8,
-    paddingHorizontal: 8,
-    height: 40,
+    fontSize: 16,
+    color:'#000',
   },
   box: {
     flexDirection: "row",
@@ -139,7 +145,7 @@ const styles = StyleSheet.create({
   },
   whiteText: {
     fontSize: 17,
-    backgroundColor: "#fafafa",
+    backgroundColor: "#fff",
     alignSelf: "flex-start",
     maxWidth: "80%",
     padding: 17,
