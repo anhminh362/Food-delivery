@@ -10,7 +10,7 @@ import {
 import { StatusBar } from "expo-status-bar";
 import Search from "../assets/images/search-icon.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { useNavigation } from '@react-navigation/native';
+import { useNavigation } from "@react-navigation/native";
 
 export default Header = () => {
   const navigation = useNavigation();
@@ -18,7 +18,7 @@ export default Header = () => {
     <View style={styles.top}>
       <View style={styles.main}>
         <Text style={styles.start}>Find Your {"\n"}Favourite Food</Text>
-        <Pressable>
+        <Pressable >
           <Ionicons
             style={styles.notificationIcon}
             name="notifications-outline"

@@ -111,7 +111,8 @@ const styles = StyleSheet.create({
   container:{
     flexDirection:'column',
     flexWrap:'wrap',
-    justifyContent:'space-around',
+    justifyContent:'space-between',
+    flex:1
   },
   messageInputContainer: {
     flexDirection: "row",
@@ -121,7 +122,7 @@ const styles = StyleSheet.create({
     paddingHorizontal:9,
     backgroundColor:'#fff',
     borderRadius: 20,
-    marginTop:5,
+    marginTop:15,
     marginHorizontal:15
   },
   messageInput: {

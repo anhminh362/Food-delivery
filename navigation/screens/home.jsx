@@ -1,6 +1,6 @@
 import React from "react";
 import Background from "../../assets/images/Pattern.png";
-// import Banner from "../assets/images/banner1.png";
+import { useNavigation } from "@react-navigation/native";
 import Banner from "../../common/ui/banner";
 import {
   Pressable,
@@ -17,6 +17,7 @@ import Header from "../../common/header";
 
 const listCard = [{ name: "Vegan Resto", img: "Restaurant", time: "12mins" }];
 export default Home = () => {
+  const navigation = useNavigation();
   return (
     <>
       <ScrollView style={styles.container}>
@@ -26,7 +27,13 @@ export default Home = () => {
           resizeMode="cover"
         >
           <Header />
-          <Banner />
+          <Pressable
+            onPress={() => {
+              navigation.navigate("Promo");
+            }}
+          >
+            <Banner image={require("../../assets/images/Promo.png")} />
+          </Pressable>
           <View style={styles.Nearest}>
             <View style={styles.session}>
               <Text style={styles.text}>Nearest Restaurant</Text>

@@ -12,6 +12,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Search from "./common/ui/search";
 import Rating from "./navigation/screens/rating";
+import promo from "./navigation/screens/promo";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -177,6 +178,11 @@ export default function App() {
         <Stack.Screen
           name="Search"
           component={Search}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="Promo"
+          component={promo}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

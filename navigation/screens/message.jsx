@@ -9,7 +9,7 @@ import {
   ScrollView,
 } from "react-native";
 import { Boundary } from "../../common/ui/boundary";
-import messageData from "./messagedata";
+import messageData from "../../data/messagedata";
 
 export const Message = ({ navigation }) => {
   return (
