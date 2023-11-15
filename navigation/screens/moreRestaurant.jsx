@@ -76,12 +76,16 @@ export default MoreRestaurant = ({ navigation }) => {
         <View style={styles.Nearest}>
           <View style={styles.session}>
           <Text style={styles.text}>Nearest Restaurant</Text>
-          <Pressable>
-          <Text style={styles.viewMore}>Hind</Text>
+          <Pressable
+          onPress={() => navigation.navigate("Home")}
+          
+          >
+          <Text style={styles.viewMore}>Hidden</Text>
           </Pressable>
           </View>
           <View style={styles.listCard}>
 
+          <Card/>
           <Card/>
           <Card/>
           <Card/>
