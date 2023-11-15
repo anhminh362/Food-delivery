@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     padding: 10,
-    borderRadius: 10,
+    borderRadius: 30,
     gap: 10,
   },
 });

@@ -3,11 +3,9 @@ import { Card } from 'react-native-shadow-cards';
 import Detail_Pro1 from './detail_pro1';
 import React from 'react';
 
-export default CardProduct = ({ navigation }) => {
+export default Locations = ({ navigation }) => {
   return (
-
-    <View style={styles.card}>
-      <Image style={styles.img1} source={require('../../assets/images/anh1.png')} />
+      <ImageBackground style={styles.img1} source={require('../../assets/images/anh1.png')} >
       <View style={styles.name}>
         <Text style={styles.text1}>Herbal Pancake</Text>
         <Text style={styles.text_war}>Warung Herbal</Text>
@@ -15,7 +13,7 @@ export default CardProduct = ({ navigation }) => {
       <View style={styles.name}>
         <Text style={styles.price}>$8</Text>
       </View>
-    </View>
+      </ImageBackground>
       );
 }
 

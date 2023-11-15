@@ -2,6 +2,7 @@ import { View, StyleSheet, Image, Text } from "react-native";
 import React from "react";
 export default function Card() {
   return (
+    
     <View style={styles.container}>
       <Image
         style={styles.img}

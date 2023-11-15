@@ -3,7 +3,7 @@ import Home from "./navigation/screens/home";
 import { Profile } from "./navigation/screens/profile";
 import { Message } from "./navigation/screens/message";
 import { Mess } from "./navigation/screens/mess";
-import moreRestaurant from "./navigation/screens/moreRestaurant";
+import Detail_Pro1 from "./common/ui/detail_pro1";
 import Market from "./navigation/screens/market";
 import { Call } from "./navigation/screens/call";
 import { NavigationContainer } from "@react-navigation/native";
@@ -171,7 +171,7 @@ export default function App() {
           options={{ headerShown: false }}
         />
         <Stack.Screen name="Call" component={Call} />
-        <Stack.Screen name="MoreRestaurant" component={MoreRestaurant}/>
+        <Stack.Screen name="Detail_Pro1" component={Detail_Pro1}/>
         <Stack.Screen
           name="Rating"
           component={Rating}
