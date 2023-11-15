@@ -21,6 +21,7 @@ export const Mess = ({ navigation }) => {
   };
   return (
     <Boundary title={"Chat"}>
+      <View style={styles.container}>
       <View style={styles.cart_mess}>
         <View style={styles.box}>
           <Pressable onPress={() => navigation.navigate("Rating")}>
@@ -58,7 +59,7 @@ export const Mess = ({ navigation }) => {
           </View>
         </View>
       </View>
-      <ScrollView style={{ height: 500 }}>
+      <ScrollView style={{ height: 470 }}>
         <View style={styles.chat}>
           <Text style={styles.whiteText}>Just to order</Text>
           <Text style={styles.blueText}>
@@ -85,6 +86,7 @@ export const Mess = ({ navigation }) => {
         />
         <Button title="Send" onPress={sendMessage} />
       </View>
+      </View>
     </Boundary>
   );
 };
@@ -100,24 +102,18 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginVertical: 20,
   },
+  container:{
+    flexDirection:'column',
+    flexWrap:'wrap',
+    justifyContent:'space-around',
+    // backgroundColor:'yellow'
+  },
   messageInputContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    paddingHorizontal: 16,
-    marginTop: 10,
-    backgroundColor: "white", // Tùy chỉnh màu nền cho phần nhập tin nhắn
-    // position: "absolute",
-    // top: 0,
-    // // bottom:0,
-    // flexDirection: "row",
-    // alignItems: "center",
-    // justifyContent: "space-between",
-    // paddingHorizontal: 16,
-    // marginTop: 690,
-    // height: 70,
-    // width: 420,
-    // backgroundColor: "white", // Tùy chỉnh màu nền cho phần nhập tin nhắn
+    padding: 16,
+    
   },
   messageInput: {
     flex: 1,
@@ -139,6 +135,7 @@ const styles = StyleSheet.create({
   chat: {
     flexDirection: "column",
     gap: 10,
+    marginHorizontal:20
   },
   whiteText: {
     fontSize: 17,

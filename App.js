@@ -55,7 +55,6 @@ export default function App() {
                     }}
                   >
                     <Ionicons
-                      style={styles.home_icon}
                       name="home"
                       color={focused ? "#2A01FF" : "#856DFF"}
                       size={30}
@@ -185,21 +184,3 @@ export default function App() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tabBarIconStyle: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  tabBarTextFocused: {
-    color: "#2A01FF",
-  },
-  tabBarTextUnfocused: {
-    color: "#6B50F6",
-  },
-});
