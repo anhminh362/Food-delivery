@@ -1,102 +1,4 @@
-// import React, { useState } from "react";
-// import { StyleSheet, View, ImageBackground, Image, Text } from "react-native";
-// import { Card } from "react-native-shadow-cards";
-// import { Ionicons } from "@expo/vector-icons";
 
-// export default function CardPro() {
-//   const [quantity, setQuantity] = useState(1); // Số lượng mặc định
-
-//   const handleDecrease = () => {
-//     if (quantity > 1) {
-//       setQuantity(quantity - 1);
-//     }
-//   };
-
-//   const handleIncrease = () => {
-//     setQuantity(quantity + 1);
-//   };
-
-//   return (
-//     <View style={styles.card}>
-//       <Image
-//         style={styles.img1}
-//         source={require("../../assets/images/banh_xeo.jpg")}
-//       />
-//       <View style={styles.name}>
-//         <Text style={styles.text1}>Herbal Pancake</Text>
-//         <Text style={styles.text_war}>Warung Herbal</Text>
-//         <Text style={styles.price}>$8</Text>
-//       </View>
-//       <View style={styles.change}>
-//         <View style={styles.removeBackground}>
-//           <Ionicons
-//             name="remove"
-//             color={"#6b50f6"}
-//             size={20}
-//             onPress={handleDecrease}
-//           />
-//         </View>
-//         <Text style={styles.quantity}>{quantity}</Text>
-//         <View style={styles.addBackground}>
-//           <Ionicons
-//             name="add"
-//             color={"#fff"}
-//             size={20}
-//             onPress={handleIncrease}
-//           />
-//         </View>
-//       </View>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   card: {
-//     flexDirection: "row",
-//     justifyContent: "space-between",
-//     gap:20,
-//     padding:15,
-//     backgroundColor:'#fff',
-//     borderRadius: 10,
-//   },
-//   text1: {
-//     fontWeight: "bold",
-//     color: "#595b62",
-//   },
-//   text_war: {
-//     color: "#e9e5fe",
-//   },
-//   price: {
-//     color: "#6b50f6",
-//     fontSize: 25,
-//     fontWeight: "bold",
-//   },
-//   img1: {
-//     width: "25%",
-//     height: "100%",
-//     borderRadius: 10,
-//   },
-//   change: {
-//     paddingTop: "5%",
-//     flexDirection: "row",
-//     paddingRight: 20,
-//     alignItems: "center",
-//     gap: 3,
-//   },
-//   quantity: {
-//     fontSize: 16,
-//     color: "#181818",
-//     padding: 3,
-//   },
-//   removeBackground: {
-//     backgroundColor: "#e2deff",
-//     borderRadius: 5,
-//   },
-//   addBackground: {
-//     backgroundColor: "#6b50f6",
-//     borderRadius: 5,
-//   },
-// });
 import React, { useState } from "react";
 import { StyleSheet, View, Text, FlatList, Animated,Image, TouchableOpacity } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
@@ -104,6 +6,7 @@ import { Ionicons } from "@expo/vector-icons";
 import productsData from "../../data/data";
 
 function CardProduct() {
+
   const [data, setData] = useState(productsData);
 
   const handleDelete = (id) => {
