@@ -6,7 +6,7 @@ import {
   Text,
   ScrollView,
 } from "react-native";
-import profileData from "./profiledata";
+import profileData from "../../data/profiledata";
 import Ionicons from "react-native-vector-icons/Ionicons";
 export const Profile = ({ navigation }) => {
   return (

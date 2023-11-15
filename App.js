@@ -13,6 +13,7 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import Icon from "react-native-vector-icons/FontAwesome";
 import Search from "./common/ui/search";
 import Rating from "./navigation/screens/rating";
+import promo from "./navigation/screens/promo";
 
 const Stack = createStackNavigator();
 export default function App() {
@@ -56,7 +57,6 @@ export default function App() {
                     }}
                   >
                     <Ionicons
-                      style={styles.home_icon}
                       name="home"
                       color={focused ? "#2A01FF" : "#856DFF"}
                       size={30}
@@ -182,26 +182,13 @@ export default function App() {
           component={Search}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="Promo"
+          component={promo}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  tabBarIconStyle: {
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  tabBarTextFocused: {
-    color: "#2A01FF",
-  },
-  tabBarTextUnfocused: {
-    color: "#6B50F6",
-  },
-});

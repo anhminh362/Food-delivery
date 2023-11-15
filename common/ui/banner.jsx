@@ -35,11 +35,11 @@ import {
   Button,
 } from "react-native";
 
-export default function Banner({ navigation }) {
+export default function Banner({ image }) {
   return (
     <View style={styles.Banner}>
       <ImageBackground
-        source={require("../../assets/images/Promo.png")}
+        source={image}
         style={styles.bannerBackground}
         resizeMode="cover"
       >

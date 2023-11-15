@@ -35,7 +35,8 @@ const styles = StyleSheet.create({
     gap:15
   },
   totalBackground: {
-    paddingVertical: "11%",
+    paddingVertical: 50,
+    marginBottom: 50
 
   },
   divide: {
