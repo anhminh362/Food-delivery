@@ -1,32 +1,25 @@
 import React from "react";
 import Background from "../../assets/images/Pattern.png";
-// import Banner from "../assets/images/banner1.png";
+import { useNavigation } from "@react-navigation/native";
 import Banner from "../../common/ui/banner";
-import Tab from "../../common/tab";
 import {
   Pressable,
   ImageBackground,
   Text,
   View,
   StyleSheet,
-  Image,
-  TextInput,
-  Button,
   ScrollView,
-  FlatList
 } from "react-native";
-import { StatusBar } from "expo-status-bar";
-import Search from '../../assets/images/search-icon.png';
-import Ionicons from "react-native-vector-icons/Ionicons";
 import Card from "../../common/ui/card";
 import CardProduct from "../../common/ui/box";
 
-export default Home = ({ navigation }) => {
+export default Home = () => {
   const [showAllItems, setShowAllItems] = React.useState(false);
   const [viewMoreText, setViewMoreText] = React.useState("View more");
   const [ShowAllItems, setshowAllItems] = React.useState(false);
   const [ViewMoreText, setviewMoreText] = React.useState("View more");
 
+  const navigation = useNavigation();
   return (
     <>
       <ScrollView style={styles.container}>
@@ -35,43 +28,14 @@ export default Home = ({ navigation }) => {
           style={styles.background}
           resizeMode="cover"
         >
-          <View style={styles.top}>
-            <View style={styles.main}>
-              <Text style={styles.start}>Find Your {"\n"}Favourite Food</Text>
-              <Pressable>
-                <Ionicons
-                  style={styles.notificationIcon}
-                  name="notifications-outline"
-                  color={"#6B50F6"}
-                  size={30}
-                />
-              </Pressable>
-            </View>
-            <View style={styles.searchView}>
-              <View style={styles.searchBar}>
-                <Pressable style={styles.btnSearch}>
-                  <Image
-                    style={styles.searchIcon}
-                    source={Search}
-                  />
-                </Pressable>
-                <TextInput
-                  style={styles.searchinput}
-                  placeholder="What do you want to order?"
-                ></TextInput>
-              </View>
-              <View style={styles.filterView}>
-                <Ionicons
-                  name="options"
-                  color={"#6B50F6"}
-                  size={30}
-                  style={styles.options}
-                ></Ionicons>
-              </View>
-            </View>
-            <StatusBar style="auto" />
-          </View>
-          <Banner />
+          <Header />
+          <Pressable
+            onPress={() => {
+              navigation.navigate("Promo");
+            }}
+          >
+            <Banner image={require("../../assets/images/Promo.png")} />
+          </Pressable>
           <View style={styles.Nearest}>
             <View style={styles.session}>
               <Text style={styles.text}>Nearest Restaurant</Text>
@@ -104,7 +68,6 @@ export default Home = ({ navigation }) => {
             </View>
             {/* <CardList list={listCard}/> */}
           </View>
-          {/* <Text>ABC</Text> */}
           <View style={styles.Nearest}>
             <View style={styles.session}>
               <Text style={styles.text}>Popular Menu</Text>

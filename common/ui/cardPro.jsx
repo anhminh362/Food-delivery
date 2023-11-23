@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import { StyleSheet, View, Text, FlatList, Animated,Image, TouchableOpacity } from "react-native";
+import {Image, StyleSheet, View, Text, FlatList, Animated,Image, TouchableOpacity } from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
 import productsData from "../../data/data";

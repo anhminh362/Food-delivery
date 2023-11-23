@@ -4,7 +4,6 @@ import {
   ImageBackground,
   Text,
   Image,
-  Button,
   TouchableOpacity,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";

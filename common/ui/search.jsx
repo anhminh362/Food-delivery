@@ -1,64 +1,47 @@
 import React from "react";
 import Background from "../../assets/images/Pattern.png";
-// import Banner from "../../common/ui/banner";
 import {
   Pressable,
   ImageBackground,
   Text,
   View,
   StyleSheet,
-  Image,
-  TextInput,
-  Button,
 } from "react-native";
 import Header from "../header";
+import ListButton from "./button";
 
 export default Search = ({ navigation }) => {
   return (
     <>
       <View style={styles.container}>
-      <ImageBackground
-        source={Background}
-        style={styles.background}
-        resizeMode="cover"
-      >
-        <Header />
-        <View>
-          <Text style={styles.text}>Type</Text>
-          <View>
-            {/* <Button>Restaurant</Button>
-            <Button>Menu</Button> */}
+        <ImageBackground
+          source={Background}
+          style={styles.background}
+          resizeMode="cover"
+        >
+          <Header />
+          <View style={styles.optionList}>
+            <View style={styles.option}>
+              <Text style={styles.text}>Type</Text>
+              <ListButton list={["Restaurant", "Menu"]} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.text}>Location</Text>
+              <ListButton list={["1km", ">10km", "<10km"]} />
+            </View>
+            <View style={styles.option}>
+              <Text style={styles.text}>Food</Text>
+              <ListButton
+                list={["Cake", "Soup", "Main Course", "Appetizer", "Dessert"]}
+              />
+            </View>
           </View>
-        </View>
-        <View>
-          <Text style={styles.text}>Location</Text>
-          <View>
-            {/* <Button>1 km</Button>
-            <Button>Duoi 10km</Button>
-            <Button>Tren 10km</Button> */}
-          </View>
-        </View>
-        <View>
-          <Text style={styles.text}>Food</Text>
-          <View style={styles.list}>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>Cake</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>Soup</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>Main Course</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>Appetizer</Text>
-            </Pressable>
-            <Pressable style={styles.button}>
-              <Text style={styles.buttonText}>Dessert</Text>
+          <View style={styles.buttonView}>
+            <Pressable style={styles.searchButton}>
+              <Text style={styles.searchText}>Search</Text>
             </Pressable>
           </View>
-        </View>
-      </ImageBackground>
+        </ImageBackground>
       </View>
     </>
   );
@@ -73,28 +56,29 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 30,
   },
-  button:{
-    backgroundColor:'#e4ffef',
-    paddingVertical:12,
-    paddingHorizontal:25,
-    borderRadius:15,
-    
-  },
   text: {
     fontWeight: "700",
-    marginBottom: 12,
     color: "#22242E",
     fontSize: 15,
-    marginTop: 20,
   },
-  list:{
-    flexDirection:'row',
-    gap:15,
-    flexWrap:'wrap'
+  buttonView: {
+    marginTop: 150,
   },
-  buttonText:{
-    fontSize:15,
-    color:'#6B50F6',
-    // fontWeight:'300'
-  }
+  searchButton: {
+    backgroundColor: "#6B50F6",
+    borderRadius: 15,
+    paddingVertical: 15,
+    alignItems: "center",
+  },
+  searchText: {
+    fontWeight: "700",
+    color: "#FEFEFF",
+    fontSize: 15,
+  },
+  optionList: {
+    flexDirection: "column",
+  },
+  option: {
+    marginVertical: 10,
+  },
 });

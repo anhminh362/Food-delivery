@@ -3,7 +3,6 @@ import {
   StyleSheet,
   View,
   ImageBackground,
-  ScrollView,
   Text,
   Pressable,
 } from "react-native";
@@ -38,7 +37,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#f5f5fa",
-    marginBottom: 50,
   },
   background: {
     flex: 1,
