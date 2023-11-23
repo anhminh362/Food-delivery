@@ -1,12 +1,18 @@
-
 import React, { useState } from "react";
-import {Image, StyleSheet, View, Text, FlatList, Animated,Image, TouchableOpacity } from "react-native";
+import {
+  Image,
+  StyleSheet,
+  View,
+  Text,
+  FlatList,
+  Animated,
+  TouchableOpacity,
+} from "react-native";
 import { Swipeable } from "react-native-gesture-handler";
 import { Ionicons } from "@expo/vector-icons";
 import productsData from "../../data/data";
 
 function CardProduct() {
-
   const [data, setData] = useState(productsData);
 
   const handleDelete = (id) => {
@@ -21,20 +27,33 @@ function CardProduct() {
       extrapolate: "clamp",
     });
     return (
-      <View style={{ backgroundColor: "#6B50F6", justifyContent: "center",width:100, height:117, borderRadius:20}}>
+      <View
+        style={{
+          backgroundColor: "#6B50F6",
+          justifyContent: "center",
+          width: 100,
+          height: 117,
+          borderRadius: 20,
+        }}
+      >
         <Animated.Text
           style={{
             color: "white",
-            paddingHorizontal:40,
+            paddingHorizontal: 40,
             fontWeight: "bold",
             transform: [{ scale }],
           }}
         >
-            <View style={styles.quantityControls}>
-        <TouchableOpacity onPress={onDelete}>
-          <Ionicons name="trash-outline" color={"#fff"} size={25} style={{justifyContent: "center"}} />
-        </TouchableOpacity>
-      </View>
+          <View style={styles.quantityControls}>
+            <TouchableOpacity onPress={onDelete}>
+              <Ionicons
+                name="trash-outline"
+                color={"#fff"}
+                size={25}
+                style={{ justifyContent: "center" }}
+              />
+            </TouchableOpacity>
+          </View>
         </Animated.Text>
       </View>
     );
@@ -57,8 +76,21 @@ function CardProduct() {
   );
 }
 
-
 function CartItem({ product, onDelete }) {
+  const [quantity, setQuantity] = useState(1);
+
+  const handleDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const handleIncrease = (number) => {
+    if (quantity < number) {
+      setQuantity(quantity + 1);
+    }
+  };
+
   const image = product.image;
   return (
     <View style={styles.card}>
@@ -71,6 +103,25 @@ function CartItem({ product, onDelete }) {
         <Text style={styles.productName}>{product.name}</Text>
         <Text style={styles.productRestaurant}>{product.restaurant}</Text>
         <Text style={styles.productPrice}>${product.price}</Text>
+      </View>
+      <View style={styles.change}>
+        <View style={styles.removeBackground}>
+          <Ionicons
+            name="remove"
+            color={"#6b50f6"}
+            size={20}
+            onPress={handleDecrease}
+          />
+        </View>
+        <Text style={styles.quantity}>{quantity}</Text>
+        <View style={styles.addBackground}>
+          <Ionicons
+            name="add"
+            color={"#fff"}
+            size={20}
+            onPress={() => handleIncrease(product.quantityInStock)}
+          />
+        </View>
       </View>
     </View>
   );
@@ -123,6 +174,26 @@ const styles = StyleSheet.create({
   quantityControls: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  change: {
+    paddingTop: "5%",
+    flexDirection: "row",
+    paddingRight: 20,
+    alignItems: "center",
+    gap: 3,
+  },
+  quantity: {
+    fontSize: 16,
+    color: "#181818",
+    padding: 3,
+  },
+  removeBackground: {
+    backgroundColor: "#e2deff",
+    borderRadius: 5,
+  },
+  addBackground: {
+    backgroundColor: "#6b50f6",
+    borderRadius: 5,
   },
 });
 
