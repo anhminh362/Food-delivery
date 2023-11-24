@@ -1,18 +1,24 @@
-import { View, StyleSheet, Image, Text } from "react-native";
+import { View, StyleSheet, Image, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
+
 export default function Card() {
+  const navigation = useNavigation();
   return (
-    
-    <View style={styles.container}>
-      <Image
-        style={styles.img}
-        source={require(`../../assets/images/Restaurant.png`)}
-      ></Image>
-      <View style={styles.content}>
-        <Text style={styles.name}>Vegan Resto</Text>
-        <Text style={styles.mins}>12 Mins</Text>
+    <Pressable onPress={() => {
+      navigation.navigate("DetailPro");
+    }}>
+      <View style={styles.container}>
+        <Image
+          style={styles.img}
+          source={require(`../../assets/images/Restaurant.png`)}
+        ></Image>
+        <View style={styles.content}>
+          <Text style={styles.name}>Vegan Resto</Text>
+          <Text style={styles.mins}>12 Mins</Text>
+        </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
 const styles = StyleSheet.create({

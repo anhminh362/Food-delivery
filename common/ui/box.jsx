@@ -1,21 +1,31 @@
-import { StyleSheet, View, ImageBackground, Image, Text} from 'react-native';
-import React from 'react';
+import { StyleSheet, View, Image, Text, Pressable } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import React from "react";
 
-export default CardProduct = ({ navigation }) => {
+export default CardProduct = () => {
+  const navigation = useNavigation();
   return (
-
-    <View style={styles.card}>
-      <Image style={styles.img1} source={require('../../assets/images/anh1.png')} />
-      <View style={styles.name}>
-        <Text style={styles.text1}>Herbal Pancake</Text>
-        <Text style={styles.text_war}>Warung Herbal</Text>
+    <Pressable
+      onPress={() => {
+        navigation.navigate("DetailRes");
+      }}
+    >
+      <View style={styles.card}>
+        <Image
+          style={styles.img1}
+          source={require("../../assets/images/anh1.png")}
+        />
+        <View style={styles.name}>
+          <Text style={styles.text1}>Herbal Pancake</Text>
+          <Text style={styles.text_war}>Warung Herbal</Text>
+        </View>
+        <View style={styles.name}>
+          <Text style={styles.price}>$8</Text>
+        </View>
       </View>
-      <View style={styles.name}>
-        <Text style={styles.price}>$8</Text>
-      </View>
-    </View>
-      );
-}
+    </Pressable>
+  );
+};
 
 const styles = StyleSheet.create({
   background: {
@@ -23,35 +33,35 @@ const styles = StyleSheet.create({
   },
   text_popular: {
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   card: {
-    flexDirection: 'row',
+    flexDirection: "row",
     justifyContent: "space-between",
     height: 90,
     padding: 10,
-    backgroundColor:'#fff',
-    borderRadius:15
+    backgroundColor: "#fff",
+    borderRadius: 15,
   },
   text1: {
-    fontWeight: 'bold',
-    color: '#595b62',
+    fontWeight: "bold",
+    color: "#595b62",
   },
   text_war: {
-    color: '#e9e5fe',
+    color: "#e9e5fe",
   },
   price: {
-    color: '#6b50f6',
+    color: "#6b50f6",
     fontSize: 25,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   img1: {
-    width: '25%',
-    height: '100%',
+    width: "25%",
+    height: "100%",
     borderRadius: 10,
   },
-  name:{
-    justifyContent:'center',
-    paddingRight:20,
-  }
+  name: {
+    justifyContent: "center",
+    paddingRight: 20,
+  },
 });
