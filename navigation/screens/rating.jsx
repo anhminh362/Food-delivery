@@ -76,13 +76,15 @@ const styles = StyleSheet.create({
   textRating1: {
     textAlign: "center",
     fontSize: 30,
+    fontWeight:"bold"
   },
   textRating2: {
     textAlign: "center",
     fontSize: 30,
+    fontWeight:"bold"
   },
   textRating3: {
-    fontSize: 15,
+    fontSize: 17,
     color: "#d9d9d9",
     textAlign: "center",
     marginTop:15
