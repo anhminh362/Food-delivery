@@ -16,6 +16,7 @@ import Rating from "./navigation/screens/rating";
 import promo from "./navigation/screens/promo";
 import Notifications from "./navigation/screens/noti";
 import Detail_Pro from "./common/ui/detail_pro";
+import listRes from "./common/ui/listRes";
 const Stack = createStackNavigator();
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -205,6 +206,11 @@ export default function App() {
         <Stack.Screen
           name="DetailPro"
           component={Detail_Pro}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="ListRestaurant"
+          component={listRes}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>

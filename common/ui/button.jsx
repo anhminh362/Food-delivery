@@ -4,6 +4,7 @@ import {
   View,
   StyleSheet,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
 export default function ListButton({ list }) {
   return (
@@ -16,8 +17,11 @@ export default function ListButton({ list }) {
 }
 
 function Button({ name }) {
+  const navigation = useNavigation();
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} onPress={() => {
+      navigation.navigate("ListRestaurant");
+    }}>
       <Text style={styles.buttonText}>{name}</Text>
     </Pressable>
   );

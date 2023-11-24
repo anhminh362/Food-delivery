@@ -1,8 +1,16 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native';
+import {
+  ImageBackground,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
+import { useNavigation } from "@react-navigation/native";
 
-export default TotalView = ({ navigation }) => {
-    return (
-      <ImageBackground
+export default TotalView = () => {
+  const navigation = useNavigation();
+  return (
+    <ImageBackground
       source={require("../../assets/images/PriceInfo.png")}
       style={styles.totalBackground}
     >
@@ -21,23 +29,24 @@ export default TotalView = ({ navigation }) => {
             <Text style={styles.text}>120$</Text>
           </View>
         </View>
-        <View style={styles.btn}>
-          <Text style={styles.orderBtn}>Place View Order</Text>
-        </View>
+        <Pressable onPress={() => navigation.navigate("Rating")}>
+          <View style={styles.btn}>
+            <Text style={styles.orderBtn}>Place View Order</Text>
+          </View>
+        </Pressable>
       </View>
     </ImageBackground>
-    );
-}
+  );
+};
 
 const styles = StyleSheet.create({
   total: {
-    flexDirection:'column',
-    gap:15
+    flexDirection: "column",
+    gap: 15,
   },
   totalBackground: {
     paddingVertical: 50,
-    marginBottom: 50
-
+    marginBottom: 50,
   },
   divide: {
     flexDirection: "row",
@@ -66,6 +75,6 @@ const styles = StyleSheet.create({
     padding: 12,
     borderRadius: 15,
     textAlign: "center",
-    fontWeight:'700'
+    fontWeight: "700",
   },
 });
