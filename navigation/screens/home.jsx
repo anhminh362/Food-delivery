@@ -12,6 +12,10 @@ import {
 } from "react-native";
 import Card from "../../common/ui/card";
 import CardProduct from "../../common/ui/box";
+import ListCard from "../../common/ui/listCard";
+import restaurantData from "../../data/resData";
+import restaurantData2 from "../../data/resData2";
+
 
 export default Home = () => {
   const [showAllItems, setShowAllItems] = React.useState(false);
@@ -52,18 +56,16 @@ export default Home = () => {
             </View>
             <View style={styles.listCard}>
               {showAllItems ? (
-                <>
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                  <Card />
-                </>
+                // <>
+                //   <Card />
+                //   <Card />
+                //   <Card />
+                //   <Card />
+                //   <Card />
+                // </>
+                <ListCard list={restaurantData}/>
               ) : (
-                <>
-                  <Card />
-                  <Card />
-                </>
+                <ListCard list={restaurantData2}/>
               )}
             </View>
             {/* <CardList list={listCard}/> */}
@@ -160,7 +162,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between'
   },
-
   listCard: {
     padding: 10,
     flexDirection: 'row',

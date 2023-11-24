@@ -24,7 +24,7 @@ export const Mess = ({ navigation }) => {
       <View style={styles.container}>
       <View style={styles.cart_mess}>
         <View style={styles.box}>
-          <Pressable onPress={() => navigation.navigate("Rating")}>
+          <Pressable onPress={() => navigation.navigate("Profile")}>
             <Image
               style={styles.img}
               source={require(`../../assets/images/image_per5.jpg`)}
