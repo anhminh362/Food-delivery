@@ -13,12 +13,24 @@ import Ionicons from "react-native-vector-icons/Ionicons";
 import { Boundary } from "../../common/ui/boundary";
 import SendIcon from '../../assets/images/IconSend.png'
 export const Mess = ({ navigation }) => {
+  const [messages, setMessages] = useState([
+    { id: 1, content: "Just to order", sender: "user" },
+    // Các tin nhắn khác nếu có
+  ]);
+
   const [message, setMessage] = useState("");
 
   const sendMessage = () => {
-    console.log("Sending message:", message);
+    if (message.trim() === "") {
+      return;
+    }
+
+    const newMessage = { id: messages.length + 1, content: message, sender: "user" };
+
+    setMessages([...messages, newMessage]);
     setMessage("");
   };
+
   return (
     <Boundary title={"Chat"}>
       <View style={styles.container}>
@@ -60,34 +72,28 @@ export const Mess = ({ navigation }) => {
         </View>
       </View>
       <ScrollView style={{ height: 450 }}>
-        <View style={styles.chat}>
-          <Text style={styles.whiteText}>Just to order</Text>
-          <Text style={styles.blueText}>
-            Okay, for what level of spiciness?
-          </Text>
-          <Text style={styles.whiteText}>Okay, wait a minute 👍</Text>
-          <Text style={styles.blueText}>Okay I'm waiting 👍</Text>
-          <Text style={styles.whiteText}>Just to order</Text>
-          <Text style={styles.whiteText}>Just to order</Text>
-          <Text style={styles.blueText}>
-            Okay, for what level of spiciness?
-          </Text>
-          <Text style={styles.whiteText}>Okay, wait a minute 👍</Text>
-          <Text style={styles.blueText}>Okay I'm waiting 👍</Text>
-          <Text style={styles.whiteText}>Just to order</Text>
-        </View>
-      </ScrollView>
-      <View style={styles.messageInputContainer}>
-        <TextInput
-          style={styles.messageInput}
-          placeholder="Type your message..."
-          value={message}
-          onChangeText={(text) => setMessage(text)}
-        />
-        <Pressable onPress={sendMessage} >
-          <Image source={SendIcon} style={styles.icon}/>
-        </Pressable>
-      </View>
+  <View style={styles.chat}>
+    {messages.map((msg) => (
+      <Text
+        key={msg.id}
+        style={msg.sender === "user" ? styles.whiteText : styles.blueText}
+      >
+        {msg.content}
+      </Text>
+    ))}
+  </View>
+</ScrollView>
+<View style={styles.messageInputContainer}>
+  <TextInput
+    style={styles.messageInput}
+    placeholder="Type your message..."
+    value={message}
+    onChangeText={(text) => setMessage(text)}
+  />
+  <Pressable onPress={sendMessage}>
+    <Image source={SendIcon} style={styles.icon} />
+  </Pressable>
+</View>
       </View>
     </Boundary>
   );
