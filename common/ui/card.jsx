@@ -2,20 +2,24 @@ import { View, StyleSheet, Image, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
-export default function Card() {
+export default function Card({ data }) {
   const navigation = useNavigation();
   return (
-    <Pressable onPress={() => {
-      navigation.navigate("DetailPro");
-    }}>
+    <Pressable
+      onPress={() => {
+        navigation.navigate("DetailPro");
+      }}
+    >
       <View style={styles.container}>
         <Image
           style={styles.img}
-          source={require(`../../assets/images/Restaurant.png`)}
+          source={data.image}
         ></Image>
         <View style={styles.content}>
-          <Text style={styles.name}>Vegan Resto</Text>
-          <Text style={styles.mins}>12 Mins</Text>
+          <Text style={styles.name}>{data.name}</Text>
+          <Text style={styles.mins}>{data.time}</Text>
+          {/* <Text style={styles.name}>Vegan Resto</Text>
+          <Text style={styles.mins}>12 Mins</Text> */}
         </View>
       </View>
     </Pressable>
