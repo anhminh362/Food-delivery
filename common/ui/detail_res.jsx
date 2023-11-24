@@ -8,13 +8,12 @@ import {
 } from "react-native";
 import { Card } from "react-native-shadow-cards";
 import Ionicons from "react-native-vector-icons/Ionicons";
-import { useNavigation } from "@react-navigation/native";
+// import { useNavigation } from "@react-navigation/native";
 import Person from "../../assets/images/person.jpg";
 import Restaurant from "../../assets/images/Restaurant1.jpg";
-import Cake from "../../assets/images/cake.jpg";
 import BanhXeo from "../../assets/images/banh_xeo.jpg";
-export default function Detail_Pro1() {
-  const navigation = useNavigation();
+export default function Detail_Pro1({navigation}) {
+  // const navigation = useNavigation();
   return (
     <ImageBackground style={styles.image} source={Restaurant}>
       <ScrollView>

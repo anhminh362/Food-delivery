@@ -3,7 +3,7 @@ import Home from "./navigation/screens/home";
 import { Profile } from "./navigation/screens/profile";
 import { Message } from "./navigation/screens/message";
 import { Mess } from "./navigation/screens/mess";
-import Detail_Pro1 from "./common/ui/detail_pro1";
+import Detail_Pro1 from "./common/ui/detail_res";
 import Market from "./navigation/screens/market";
 import { Call } from "./navigation/screens/call";
 import { NavigationContainer } from "@react-navigation/native";
@@ -14,7 +14,8 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import Search from "./common/ui/search";
 import Rating from "./navigation/screens/rating";
 import promo from "./navigation/screens/promo";
-import Notifications from './navigation/screens/noti'
+import Notifications from "./navigation/screens/noti";
+import Detail_Pro from "./common/ui/detail_pro";
 const Stack = createStackNavigator();
 export default function App() {
   const Tab = createBottomTabNavigator();
@@ -170,8 +171,12 @@ export default function App() {
           component={Mess}
           options={{ headerShown: false }}
         />
-        <Stack.Screen name="Call" component={Call} />
-        <Stack.Screen name="Detail_Pro1" component={Detail_Pro1}/>
+        <Stack.Screen
+          name="Call"
+          component={Call}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="Detail_Pro1" component={Detail_Pro1} />
         <Stack.Screen
           name="Rating"
           component={Rating}
@@ -192,8 +197,17 @@ export default function App() {
           component={Notifications}
           options={{ headerShown: false }}
         />
+        <Stack.Screen
+          name="DetailRes"
+          component={Detail_Pro1}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen
+          name="DetailPro"
+          component={Detail_Pro}
+          options={{ headerShown: false }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-

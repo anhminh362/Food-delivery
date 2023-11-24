@@ -5,6 +5,7 @@ import {
   View,
   StyleSheet,
   Image,
+  Pressable,
 } from "react-native";
 import Background from "../../assets/images/background.png";
 import Ionicons from "react-native-vector-icons/Ionicons";
@@ -59,15 +60,21 @@ export const Call = ({ navigation }) => {
               style={{ justifyContent: "center", alignItems: "center" }}
             ></Ionicons>
           </Text>
-          <Text
-            style={{
-              padding: 20,
-              backgroundColor: "#ff4b4b",
-              borderRadius: 150,
+          <Pressable
+            onPress={() => {
+              navigation.navigate("Mess");
             }}
           >
-            <Ionicons name="close" color={"#fff"} size={30}></Ionicons>
-          </Text>
+            <Text
+              style={{
+                padding: 20,
+                backgroundColor: "#ff4b4b",
+                borderRadius: 150,
+              }}
+            >
+              <Ionicons name="close" color={"#fff"} size={30}></Ionicons>
+            </Text>
+          </Pressable>
         </View>
       </ImageBackground>
     </View>
